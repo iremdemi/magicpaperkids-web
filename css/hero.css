@@ -69,12 +69,10 @@
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(34px, 5.2vw, 62px);
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
   color: #ffffff;
-  max-width: 18ch;
+  max-width: 19ch;
   margin-inline: auto;
   margin-bottom: var(--space-md);
   text-shadow: 0 4px 28px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.85);
