@@ -22,26 +22,40 @@
 </head>
 <body class="has-hero">
 
-  <header class="site-header container">
-    <div class="logo">Magic<span>Paper</span></div>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="MagicPaper Ana Sayfa">
+        <span class="logo-text">MAGIC<br>PAPER</span>
+        <span class="logo-sparkles">✦</span>
+      </a>
 
-    <nav class="main-nav">
-      <a href="index.html" class="is-active">Home</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="nasil-calisir.html">Nasıl Çalışır</a>
-      <a href="multimedya.html">Multimedya</a>
-      <a href="haberler-ve-etkinlikler.html">Haberler ve Etkinlikler</a>
-      <a href="erisilebilirlik-bildirimi.html">Erişilebilirlik Bildirimi</a>
-      <a href="iletisim.html">İletişim</a>
-      <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
-    </nav>
+      <nav class="main-nav" aria-label="Ana Menü">
+        <a href="index.html" class="nav-link is-active">Home</a>
+        <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+        <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır</a>
+        <a href="multimedya.html" class="nav-link">Masal Dünyaları</a>
+        <a href="gizlilik-politikasi.html" class="nav-link">Gizlilik Politikası</a>
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-btn" aria-label="Diğer Sayfalar">Daha Fazla ▾</button>
+          <div class="nav-dropdown-content">
+            <a href="haberler-ve-etkinlikler.html">Haberler ve Etkinlikler</a>
+            <a href="erisilebilirlik-bildirimi.html">Erişilebilirlik Bildirimi</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+      </nav>
 
-    <a href="iletisim.html" class="btn btn-secondary btn-sm nav-cta">Uygulamayı İndir</a>
-    <button class="nav-toggle" aria-label="Menüyü aç">☰</button>
+      <a href="iletisim.html" class="nav-cta" aria-label="Uygulamayı İndir">
+        <svg class="apple-icon" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.65-.97 1.7-0.84 2.73.99.08 2.01-.47 2.53-1.22z"/></svg>
+        <span>Uygulamayı İndir</span>
+        <span class="nav-cta-arrow">→</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menüyü aç">☰</button>
+    </div>
   </header>
 
   <main>
-    <!-- HERO (TaleTwist 4K Büyülü Masal Sahnesi) -->
+    <!-- HERO (Büyülü 3D Masal Ormanı Sahnesi) -->
     <section class="hero-section bg-navy scallop-bottom">
       <div class="hero-scene" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
@@ -49,20 +63,52 @@
       <div class="hero container">
         <div class="hero-content">
           <h1 class="hero-title">
-            Bir varmış, bir yokmuş…<br />Bu masalın kahramanı çocuğunuzmuş.
+            <span class="hero-sparkle hero-sparkle-left" aria-hidden="true">
+              <span class="sparkle-lg">✦</span>
+              <span class="sparkle-sm">✦</span>
+            </span>
+            Her masalın kahramanı,<br />çocuğunuz olsun.
+            <span class="hero-sparkle hero-sparkle-right" aria-hidden="true">
+              <span class="sparkle-lg">✦</span>
+            </span>
           </h1>
           <p class="hero-subtitle">
             MagicPaper ile çocuğunuzun adı ve fotoğrafıyla ona özel masallar yaratın.<br class="sub-br" />
             Hayal ettiği dünyalarda başlayan her hikâye, ona ait bambaşka bir maceraya dönüşsün.
           </p>
 
-          <!-- Referans görseldeki App Store'dan İndir Butonu -->
-          <div class="hero-cta-wrap">
+          <!-- Referans görseldeki App Store'dan İndir Butonu ve Işıltı Çizgileri -->
+          <div class="hero-cta-group">
+            <svg class="cta-magic-rays cta-rays-left" viewBox="0 0 28 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <line x1="24" y1="5" x2="6" y2="2" />
+              <line x1="24" y1="12" x2="4" y2="12" />
+              <line x1="24" y1="19" x2="6" y2="22" />
+            </svg>
             <a href="iletisim.html" class="hero-appstore-btn" aria-label="App Store'dan İndir">
               <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.65-.97 1.7-0.84 2.73.99.08 2.01-.47 2.53-1.22z"/></svg>
               <span>App Store'dan İndir</span>
               <span class="btn-arrow">→</span>
             </a>
+            <svg class="cta-magic-rays cta-rays-right" viewBox="0 0 28 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="5" x2="22" y2="2" />
+              <line x1="4" y1="12" x2="24" y2="12" />
+              <line x1="4" y1="19" x2="22" y2="22" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Alt Çubuğu: Aşağı Kaydır İndikatörü ve Hikaye Rozeti -->
+      <div class="hero-bottom-bar">
+        <div class="hero-bottom-spacer" aria-hidden="true"></div>
+        <a href="#simulator" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
+          <span class="scroll-stem"></span>
+          <span class="scroll-label">Aşağı kaydır</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+        <div class="hero-storybook-badge" aria-hidden="true">
+          <div class="badge-text">
+            Küçük hayaller,<br />büyük maceralara... <span class="sparkle">✨</span>
           </div>
         </div>
       </div>
