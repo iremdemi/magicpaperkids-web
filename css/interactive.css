@@ -74,7 +74,11 @@
 
 @media (max-width: 860px) {
   .simulator-container-card {
-    grid-template-columns: 1fr;
+    /* minmax(0, 1fr) kullanılıyor: düz "1fr" grid item'ın içeriği
+       küçülmeyi reddedip (buton+input satırı gibi) container'ı sayfa
+       genişliğinden taşırıyordu — bu mobilde yatay kaydırma sorununa
+       yol açıyordu. */
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
 
@@ -685,6 +689,11 @@
   }
   
   .simulator-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .simulator-input-wrap,
+  .simulator-form > .btn {
+    min-width: 0;
   }
 }
