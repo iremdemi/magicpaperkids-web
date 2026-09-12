@@ -19,6 +19,13 @@
   /* Koyu lacivert — hero bölümü zemin rengi */
   --color-bg-navy: #163a42;
 
+  /* Hero arkasındaki renkli gökyüzü/tepe sahnesi */
+  --color-sky-top: #bfe4f5;
+  --color-sky-bottom: #fbdfe9;
+  --color-sun-glow: #fff6d8;
+  --color-hill: #8fd18f;
+  --color-hill-dark: #5fae6a;
+
   --color-text-dark: #1f2430;
   --color-text-body: #4b4b4b;
   --color-text-muted: #7a7a7a;

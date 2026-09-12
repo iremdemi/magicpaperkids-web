@@ -3,11 +3,54 @@
    ========================================================================== */
 
 .hero-section {
+  position: relative;
   padding-block: var(--space-2xl) calc(var(--space-2xl) + var(--scallop-size));
   overflow: hidden;
 }
 
+/* Hero'nun arkasındaki renkli gökyüzü + tepe sahnesi (fotoğraf değil,
+   tamamen CSS ile çizilmiş: pastel gökyüzü, güneş parıltısı, yeşil tepe) */
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--color-sky-top) 0%, var(--color-sky-bottom) 70%);
+}
+
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 88% 8%, var(--color-sun-glow), transparent 40%);
+}
+
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -160px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--color-hill), var(--color-hill-dark));
+}
+
+/* Sahnenin önüne çekilen yumuşak perde — hero'nun ışığı/atmosferi
+   (koyu lacivert ton) korunsun diye; metin tarafında daha koyu,
+   illüstrasyon tarafında daha açık bırakılıyor. */
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(22, 58, 66, 0.88) 0%,
+    rgba(22, 58, 66, 0.78) 45%,
+    rgba(22, 58, 66, 0.4) 100%
+  );
+}
+
 .hero {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 460px;
   gap: var(--space-2xl);
