@@ -68,23 +68,23 @@
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(34px, 4.4vw, 56px);
-  line-height: 1.15;
+  font-size: clamp(30px, 4.2vw, 54px);
+  line-height: 1.18;
   color: #ffffff;
-  max-width: 20ch;
+  max-width: 28ch;
   margin-inline: auto;
   margin-bottom: 16px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.35);
   letter-spacing: -0.5px;
 }
 
-/* Alt Metin: Referans görseldeki gibi 3 satırlı, orta boy, beyaz ve gölgesiz zeminli */
+/* Alt Metin: Beyaz, gölgesiz zeminli, ferah ve okunabilir */
 .hero-subtitle {
   font-family: var(--font-body);
   font-size: clamp(14.5px, 1.3vw, 17px);
   font-weight: 600;
   line-height: 1.55;
-  max-width: 48ch;
+  max-width: 56ch;
   color: #ffffff;
   background: transparent;
   padding: 0;
