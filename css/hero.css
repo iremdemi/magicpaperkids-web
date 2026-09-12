@@ -10,19 +10,35 @@
   overflow: hidden;
 }
 
-/* Hero'nun arkasındaki renkli gökyüzü + tepe sahnesi (fotoğraf değil,
-   tamamen CSS ile çizilmiş: pastel gökyüzü, güneş parıltısı, yeşil tepe) */
+/* Hero'nun arkasındaki renkli, katmanlı "gün batımı" sahnesi (fotoğraf
+   değil, tamamen CSS gradyanlarıyla çizilmiş: doygun gökyüzü geçişi +
+   yumuşak ışık lekeleri + yeşil tepe silueti). Bilingvo referansındaki
+   gibi zengin/canlı bir atmosfer hedefleniyor, ama kendi renk dilimizle. */
 .hero-scene {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--color-sky-top) 0%, var(--color-sky-bottom) 70%);
+  background:
+    radial-gradient(ellipse 50% 45% at 18% 22%, rgba(255, 255, 255, 0.22), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 85% 12%, color-mix(in srgb, var(--color-brand-red) 55%, transparent), transparent 70%),
+    radial-gradient(ellipse 60% 55% at 78% 68%, color-mix(in srgb, var(--color-brand-purple-start) 55%, transparent), transparent 70%),
+    linear-gradient(
+      165deg,
+      var(--color-bg-navy) 0%,
+      var(--color-brand-purple-start) 38%,
+      var(--color-brand-purple-end) 62%,
+      var(--color-brand-red) 84%,
+      var(--color-sun-glow) 100%
+    );
 }
 
 .hero-scene::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 88% 8%, var(--color-sun-glow), transparent 40%);
+  inset: -15%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.3), transparent 40%),
+    radial-gradient(circle at 68% 55%, rgba(255, 255, 255, 0.16), transparent 45%);
+  filter: blur(50px);
 }
 
 .hero-scene::after {
@@ -31,22 +47,23 @@
   left: -10%;
   right: -10%;
   bottom: -160px;
-  height: 280px;
+  height: 300px;
   border-radius: 50%;
   background: linear-gradient(180deg, var(--color-hill), var(--color-hill-dark));
+  box-shadow: 0 -48px 0 -18px color-mix(in srgb, var(--color-hill) 60%, white);
 }
 
-/* Sahnenin önüne çekilen yumuşak perde — hero'nun ışığı/atmosferi
-   (koyu lacivert ton) korunsun diye; metin tarafında daha koyu,
-   illüstrasyon tarafında daha açık bırakılıyor. */
+/* Sahnenin önüne çekilen yumuşak perde — sadece başlık/metin bloğunun
+   arkasında lokal bir vinyet oluşturuyor, sahnenin geri kalanındaki
+   renkler tam doygunlukta kalıyor. */
 .hero-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    100deg,
-    rgba(22, 58, 66, 0.88) 0%,
-    rgba(22, 58, 66, 0.78) 45%,
-    rgba(22, 58, 66, 0.4) 100%
+  background: radial-gradient(
+    ellipse 640px 460px at 50% 36%,
+    rgba(10, 8, 26, 0.55) 0%,
+    rgba(10, 8, 26, 0.25) 45%,
+    transparent 72%
   );
 }
 
@@ -75,13 +92,15 @@
   color: #fff;
   max-width: 16ch;
   margin-bottom: var(--space-md);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-text {
   font-size: 18px;
   max-width: 55ch;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* --- Telefon mockup + yanlarda yüzen bilgi kartları --- */
