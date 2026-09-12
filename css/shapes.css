@@ -64,6 +64,12 @@
   --scallop-color: var(--color-bg);
 }
 
+.bg-navy {
+  background-color: var(--color-bg-navy);
+  color: #fff;
+  --scallop-color: var(--color-bg-navy);
+}
+
 /* --- Yumuşak blob arkaplan (hero arkasındaki organik leke) --- */
 .blob-bg {
   position: relative;
@@ -146,4 +152,12 @@
   font-size: 14px;
   background: #fff;
   box-shadow: 0 6px 16px -8px rgba(31, 36, 48, 0.35);
+}
+
+/* Koyu zeminler üzerinde kullanılan yarı saydam, kenarlıklı rozet varyantı */
+.pill-badge--outline {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: none;
 }

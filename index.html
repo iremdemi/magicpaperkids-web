@@ -42,21 +42,104 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero-section bg-white scallop-bottom blob-bg">
+    <section class="hero-section bg-navy scallop-bottom blob-bg">
       <div class="hero container">
-        <div class="hero-visual">
-          <!-- TODO: buraya telefon mockup görselini koy -> images/hero-phone.png -->
-          <img src="images/hero-phone.png" alt="MagicPaper uygulaması telefon ekranı" />
-        </div>
-
         <div class="hero-content">
-          <span class="pill-badge">✨ Sihirli Hikayeler</span>
+          <div class="hero-pills">
+            <span class="pill-badge pill-badge--outline">🚀 Uzay</span>
+            <span class="pill-badge pill-badge--outline">🌊 Deniz Altı</span>
+            <span class="pill-badge pill-badge--outline">🏰 Macera</span>
+          </div>
           <h1 class="hero-title">Çocuklara özel kişiselleştirilmiş hikayeler</h1>
           <p class="hero-text">
             Magic Paper uygulaması, çocuklara özel kendi fotoğrafları ve adıyla
             kendi hikayelerini oluşturmayı sağlayan bir iOS uygulamasıdır.
           </p>
-          <a href="#" class="btn btn-primary">Hemen Başla</a>
+          <a href="iletisim.html" class="btn btn-primary">Hemen Başla</a>
+        </div>
+
+        <div class="hero-visual">
+          <svg class="hero-illustration" viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Açık bir masal kitabından fırlayan çizgi karakterler">
+            <defs>
+              <linearGradient id="capGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" style="stop-color:var(--color-brand-purple-start)" />
+                <stop offset="1" style="stop-color:var(--color-brand-purple-end)" />
+              </linearGradient>
+            </defs>
+
+            <!-- gökyüzü dekorasyonu -->
+            <g class="hero-illustration-sky" opacity="0.9">
+              <path d="M92,72 a26,26 0 1 0 2,-1 a20,20 0 1 1 -2,1 Z" fill="#fdf6ec" opacity="0.85" />
+              <path d="M158,46 l3,8 l8,3 l-8,3 l-3,8 l-3,-8 l-8,-3 l8,-3 Z" fill="#fbdfe9" />
+              <path d="M486,58 l3,8 l8,3 l-8,3 l-3,8 l-3,-8 l-8,-3 l8,-3 Z" fill="#fdf6ec" />
+              <path d="M522,146 l2.5,6.5 l6.5,2.5 l-6.5,2.5 l-2.5,6.5 l-2.5,-6.5 l-6.5,-2.5 l6.5,-2.5 Z" fill="#fbdfe9" />
+              <path d="M66,152 l2.5,6.5 l6.5,2.5 l-6.5,2.5 l-2.5,6.5 l-2.5,-6.5 l-6.5,-2.5 l6.5,-2.5 Z" fill="#fdf6ec" />
+              <path d="M468,92 Q506,64 542,42" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-dasharray="3 7" fill="none" stroke-linecap="round" />
+              <path d="M542,42 l17,-7 l-7,18 l-6,-6 l-11,4 Z" fill="var(--color-brand-red)" />
+            </g>
+
+            <!-- açık kitap -->
+            <g class="hero-illustration-shadowed">
+              <ellipse cx="300" cy="420" rx="228" ry="15" fill="rgba(0,0,0,0.18)" />
+
+              <path d="M300,300 C222,281 142,286 92,301 L92,408 C142,426 222,421 300,402 Z" fill="#fbeed8" />
+              <path d="M300,300 C378,281 458,286 508,301 L508,408 C458,426 378,421 300,402 Z" fill="#fbeed8" />
+
+              <path d="M296,300 C298,335 298,368 296,402 L304,402 C302,368 302,335 304,300 Z" fill="rgba(0,0,0,0.14)" />
+
+              <path d="M122,332 Q160,327 196,333" stroke="rgba(226,121,77,0.4)" stroke-width="4" stroke-linecap="round" fill="none" />
+              <path d="M122,354 Q152,349 182,354" stroke="rgba(168,85,247,0.3)" stroke-width="4" stroke-linecap="round" fill="none" />
+              <path d="M122,376 Q158,371 190,376" stroke="rgba(226,121,77,0.4)" stroke-width="4" stroke-linecap="round" fill="none" />
+
+              <path d="M404,333 Q440,327 478,332" stroke="rgba(168,85,247,0.3)" stroke-width="4" stroke-linecap="round" fill="none" />
+              <path d="M418,354 Q448,349 478,354" stroke="rgba(226,121,77,0.4)" stroke-width="4" stroke-linecap="round" fill="none" />
+              <path d="M410,376 Q442,371 478,376" stroke="rgba(168,85,247,0.3)" stroke-width="4" stroke-linecap="round" fill="none" />
+            </g>
+
+            <!-- tilki dostu (sol) -->
+            <g class="hero-illustration-shadowed">
+              <path d="M160,300 C160,255 220,255 220,300 Z" fill="#e58a4f" />
+              <polygon points="163,175 151,133 180,167" fill="#e58a4f" />
+              <polygon points="165,169 159,146 174,166" fill="#fbdfe9" />
+              <polygon points="217,167 246,133 234,175" fill="#e58a4f" />
+              <polygon points="223,166 238,146 232,169" fill="#fbdfe9" />
+              <circle cx="190" cy="196" r="34" fill="#e58a4f" />
+              <ellipse cx="190" cy="207" rx="16" ry="12" fill="#fdf6ec" />
+              <circle cx="190" cy="201" r="3" fill="#1f2430" />
+              <circle cx="178" cy="190" r="3.5" fill="#1f2430" />
+              <circle cx="202" cy="190" r="3.5" fill="#1f2430" />
+              <circle cx="172" cy="202" r="5.5" fill="rgba(232,51,42,0.16)" />
+              <circle cx="208" cy="202" r="5.5" fill="rgba(232,51,42,0.16)" />
+            </g>
+
+            <!-- kaşif çocuk (orta) -->
+            <g class="hero-illustration-shadowed">
+              <path d="M256,300 C256,246 344,246 344,300 Z" fill="#4fb3ab" />
+              <rect x="280" y="284" width="40" height="16" rx="6" fill="#fdf6ec" />
+              <circle cx="300" cy="176" r="38" fill="#f0b98d" />
+              <path d="M262,168 a38,32 0 0 1 76,0 Z" fill="url(#capGradient)" />
+              <circle cx="300" cy="140" r="5" fill="var(--color-brand-red)" />
+              <circle cx="286" cy="180" r="4" fill="#1f2430" />
+              <circle cx="314" cy="180" r="4" fill="#1f2430" />
+              <path d="M290,192 Q300,199 310,192" stroke="#1f2430" stroke-width="2.5" fill="none" stroke-linecap="round" />
+              <circle cx="274" cy="190" r="6" fill="rgba(232,51,42,0.14)" />
+              <circle cx="326" cy="190" r="6" fill="rgba(232,51,42,0.14)" />
+            </g>
+
+            <!-- prenses çocuk (sağ) -->
+            <g class="hero-illustration-shadowed">
+              <path d="M366,300 C366,252 434,252 434,300 Z" fill="#f7a8c0" />
+              <rect x="386" y="286" width="28" height="14" rx="6" fill="#fdf6ec" />
+              <circle cx="368" cy="176" r="13" fill="#c85f37" />
+              <circle cx="432" cy="176" r="13" fill="#c85f37" />
+              <circle cx="400" cy="191" r="34" fill="#f6cba3" />
+              <circle cx="388" cy="188" r="3.5" fill="#1f2430" />
+              <circle cx="412" cy="188" r="3.5" fill="#1f2430" />
+              <path d="M390,201 Q400,208 410,201" stroke="#1f2430" stroke-width="2.5" fill="none" stroke-linecap="round" />
+              <circle cx="382" cy="200" r="5.5" fill="rgba(232,51,42,0.16)" />
+              <circle cx="418" cy="200" r="5.5" fill="rgba(232,51,42,0.16)" />
+            </g>
+          </svg>
         </div>
       </div>
     </section>
