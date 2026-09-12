@@ -17,35 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeData = {
     uzay: {
       suffix: "'nin Yıldızlar Yolculuğu",
-      badge: "🚀 Uzay & Galaksi",
-      duration: "⏱️ 5 dk okuma",
+      badge: "Uzay & Galaksi",
+      duration: "5 dk okuma",
       sub: "Kozmik gezegenlerde kaybolan ışık taşını bulabilecek mi?",
-      bg: "radial-gradient(circle at 50% 30%, #3b0764 0%, #0f172a 100%)",
-      coverEmoji: "🚀✨"
+      bg: "radial-gradient(circle at 50% 30%, #3b0764 0%, #0f172a 100%)"
     },
     deniz: {
       suffix: " ve Gizemli Mercan Krallığı",
-      badge: "🌊 Deniz Altı Macerası",
-      duration: "⏱️ 4 dk okuma",
+      badge: "Deniz Altı Macerası",
+      duration: "4 dk okuma",
       sub: "Yunus dostuyla birlikte okyanusun derinliklerindeki şarkıyı arıyor.",
-      bg: "radial-gradient(circle at 50% 30%, #0369a1 0%, #082f49 100%)",
-      coverEmoji: "🐬🌊"
+      bg: "radial-gradient(circle at 50% 30%, #0369a1 0%, #082f49 100%)"
     },
     dinozor: {
       suffix: " ve Sevimli Dinozor Vadisi",
-      badge: "🦕 Antik Doğa Çağı",
-      duration: "⏱️ 6 dk okuma",
+      badge: "Antik Doğa Çağı",
+      duration: "6 dk okuma",
       sub: "Yavru Brontozor ile ormanda eğlenceli bir meyve avı başlıyor!",
-      bg: "radial-gradient(circle at 50% 30%, #15803d 0%, #052e16 100%)",
-      coverEmoji: "🦕🌿"
+      bg: "radial-gradient(circle at 50% 30%, #15803d 0%, #052e16 100%)"
     },
     masal: {
       suffix: " ve Büyülü Şato Muhafızı",
-      badge: "🏰 Efsanevi Masal",
-      duration: "⏱️ 5 dk okuma",
+      badge: "Efsanevi Masal",
+      duration: "5 dk okuma",
       sub: "Işıldayan kristal kalede tüm krallığa neşe getirecek sihirli anahtar!",
-      bg: "radial-gradient(circle at 50% 30%, #be185d 0%, #4a044e 100%)",
-      coverEmoji: "🏰✨"
+      bg: "radial-gradient(circle at 50% 30%, #be185d 0%, #4a044e 100%)"
     }
   };
 

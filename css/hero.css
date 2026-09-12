@@ -75,46 +75,6 @@
   letter-spacing: -0.4px;
 }
 
-/* Başlığın yanındaki tatlı mercan renkli sihir yıldızları ✦ */
-.hero-sparkle {
-  position: absolute;
-  color: #e8332a;
-  user-select: none;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 8px rgba(232, 51, 42, 0.5));
-}
-
-.hero-sparkle-left {
-  left: -38px;
-  top: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.hero-sparkle-left .sparkle-lg {
-  font-size: 26px;
-  line-height: 1;
-}
-
-.hero-sparkle-left .sparkle-sm {
-  font-size: 15px;
-  line-height: 1;
-  margin-left: 10px;
-  opacity: 0.85;
-}
-
-.hero-sparkle-right {
-  right: -32px;
-  bottom: 8px;
-}
-
-.hero-sparkle-right .sparkle-lg {
-  font-size: 24px;
-  line-height: 1;
-}
-
 /* Alt Metin: Beyaz, gölgesiz zeminli, ferah, okunabilir ve karakterleri kapatmayan yerleşim */
 .hero-subtitle {
   font-family: var(--font-body);
@@ -310,12 +270,6 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.badge-text .sparkle {
-  color: #fef08a;
-  display: inline-block;
-  margin-left: 3px;
-}
-
 /* Responsive Düzenlemeler */
 @media (max-width: 768px) {
   .hero-section {
@@ -329,19 +283,6 @@
     margin-bottom: 12px;
     max-width: 18ch;
   }
-
-  .hero-sparkle-left {
-    left: -18px;
-    top: 4px;
-  }
-  .hero-sparkle-left .sparkle-lg { font-size: 18px; }
-  .hero-sparkle-left .sparkle-sm { display: none; }
-
-  .hero-sparkle-right {
-    right: -16px;
-    bottom: 6px;
-  }
-  .hero-sparkle-right .sparkle-lg { font-size: 18px; }
 
   .hero-subtitle {
     font-size: 13.5px;

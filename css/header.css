@@ -51,18 +51,6 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-.logo-sparkles {
-  color: #e8332a;
-  font-size: 16px;
-  filter: drop-shadow(0 0 6px rgba(232, 51, 42, 0.6));
-  animation: pulseSparkle 2.5s infinite ease-in-out;
-}
-
-@keyframes pulseSparkle {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.15) rotate(6deg); }
-}
-
 /* Orta Yüzen Translucent Frosted Glass Pill */
 .main-nav {
   display: flex;
