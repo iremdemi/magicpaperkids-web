@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     uzay: {
       suffix: "'nin Yıldızlar Yolculuğu",
       badge: "🚀 Uzay & Galaksi",
+      duration: "⏱️ 5 dk okuma",
       sub: "Kozmik gezegenlerde kaybolan ışık taşını bulabilecek mi?",
       bg: "radial-gradient(circle at 50% 30%, #3b0764 0%, #0f172a 100%)",
       coverEmoji: "🚀✨"
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deniz: {
       suffix: " ve Gizemli Mercan Krallığı",
       badge: "🌊 Deniz Altı Macerası",
+      duration: "⏱️ 4 dk okuma",
       sub: "Yunus dostuyla birlikte okyanusun derinliklerindeki şarkıyı arıyor.",
       bg: "radial-gradient(circle at 50% 30%, #0369a1 0%, #082f49 100%)",
       coverEmoji: "🐬🌊"
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dinozor: {
       suffix: " ve Sevimli Dinozor Vadisi",
       badge: "🦕 Antik Doğa Çağı",
+      duration: "⏱️ 6 dk okuma",
       sub: "Yavru Brontozor ile ormanda eğlenceli bir meyve avı başlıyor!",
       bg: "radial-gradient(circle at 50% 30%, #15803d 0%, #052e16 100%)",
       coverEmoji: "🦕🌿"
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     masal: {
       suffix: " ve Büyülü Şato Muhafızı",
       badge: "🏰 Efsanevi Masal",
+      duration: "⏱️ 5 dk okuma",
       sub: "Işıldayan kristal kalede tüm krallığa neşe getirecek sihirli anahtar!",
       bg: "radial-gradient(circle at 50% 30%, #be185d 0%, #4a044e 100%)",
       coverEmoji: "🏰✨"
@@ -70,6 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (phoneBadge) {
       phoneBadge.textContent = themeInfo.badge;
+    }
+
+    const phoneDuration = document.getElementById('phoneStoryDuration');
+    if (phoneDuration) {
+      phoneDuration.textContent = themeInfo.duration;
     }
 
     if (phoneBg) {
@@ -108,4 +117,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 3. SCROLL-TRIGGERED FADE-IN (Steps & Features Bölümleri)
+  const scrollFadeElements = document.querySelectorAll('.scroll-fade-in');
+
+  if ('IntersectionObserver' in window) {
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    scrollFadeElements.forEach(el => scrollObserver.observe(el));
+  } else {
+    // Fallback desteği
+    scrollFadeElements.forEach(el => el.classList.add('is-visible'));
+  }
 });
+

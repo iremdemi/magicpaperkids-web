@@ -49,18 +49,22 @@
       <div class="hero container">
         <div class="hero-content">
           <h1 class="hero-title">
-            Çocuklara özel kişiselleştirilmiş hikayeler
+            Her masalın kahramanı,<br />çocuğunuz olsun.
           </h1>
-          <div class="hero-cloud-bubble">
-            MagicPaper, çocuğunuzun fotoğrafından tek dokunuşla sevimli bir masal kahramanı yaratan ve adıyla özel hikayeler oluşturan büyülü bir uygulamadır.
-          </div>
-        </div>
+          <p class="hero-subtitle">
+            MagicPaper ile çocuğunuzun adı ve fotoğrafıyla<br class="sub-br" />
+            ona özel masallar yaratın. Hayal ettiği dünyalarda başlayan<br class="sub-br" />
+            her hikâye, ona ait bambaşka bir maceraya dönüşsün.
+          </p>
 
-        <!-- Masal kitabı üzerindeki buton -->
-        <div class="hero-book-cta-wrap">
-          <a href="#simulator" class="hero-book-cta">
-            Hemen Başla
-          </a>
+          <!-- Referans görseldeki App Store'dan İndir Butonu -->
+          <div class="hero-cta-wrap">
+            <a href="iletisim.html" class="hero-appstore-btn" aria-label="App Store'dan İndir">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.65-.97 1.7-0.84 2.73.99.08 2.01-.47 2.53-1.22z"/></svg>
+              <span>App Store'dan İndir</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -87,14 +91,32 @@
             </div>
 
             <div class="simulator-theme-chips" style="margin-top: 16px;">
-              <button type="button" class="theme-chip is-selected" data-theme="uzay">🚀 Uzay Kaşifi</button>
-              <button type="button" class="theme-chip" data-theme="deniz">🌊 Deniz Altı</button>
-              <button type="button" class="theme-chip" data-theme="dinozor">🦕 Dinozor Vadisi</button>
-              <button type="button" class="theme-chip" data-theme="masal">🏰 Sihirli Şato</button>
+              <button type="button" class="theme-chip is-selected" data-theme="uzay">
+                <span>🚀 Uzay Kaşifi</span>
+                <span class="chip-duration">⏱️ 5 dk</span>
+              </button>
+              <button type="button" class="theme-chip" data-theme="deniz">
+                <span>🌊 Deniz Altı</span>
+                <span class="chip-duration">⏱️ 4 dk</span>
+              </button>
+              <button type="button" class="theme-chip" data-theme="dinozor">
+                <span>🦕 Dinozor Vadisi</span>
+                <span class="chip-duration">⏱️ 6 dk</span>
+              </button>
+              <button type="button" class="theme-chip" data-theme="masal">
+                <span>🏰 Sihirli Şato</span>
+                <span class="chip-duration">⏱️ 5 dk</span>
+              </button>
+            </div>
+
+            <!-- Ebeveynler için Süre Yönetimi Göstergesi -->
+            <div class="simulator-read-time-pill-wrap">
+              <span class="simulator-read-time-badge">⏱️ İdeal Seans: 4–6 Dakika</span>
+              <span class="simulator-read-time-desc">Uyku öncesi rutininizi tam zamanında tamamlamanız için optimize edilmiştir.</span>
             </div>
 
             <!-- App Store ve Sosyal Kanıt Rozetleri -->
-            <div class="store-badges-wrap" style="justify-content: flex-start; margin-top: 28px;">
+            <div class="store-badges-wrap" style="justify-content: flex-start; margin-top: 24px;">
               <a href="iletisim.html" class="app-store-btn" aria-label="App Store'dan İndir">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.65-.97 1.7-0.84 2.73.99.08 2.01-.47 2.53-1.22z"/></svg>
                 <div class="app-store-text">
@@ -112,7 +134,10 @@
               <div class="phone-screen-content">
                 <div id="phoneScreenBg" class="phone-screen-bg" style="background: radial-gradient(circle at 50% 30%, #3b0764 0%, #0f172a 100%);"></div>
                 <div class="phone-screen-overlay">
-                  <span id="phoneStoryBadge" class="phone-story-badge">🚀 Uzay & Galaksi</span>
+                  <div class="phone-story-meta">
+                    <span id="phoneStoryBadge" class="phone-story-badge">🚀 Uzay & Galaksi</span>
+                    <span id="phoneStoryDuration" class="phone-read-time-pill">⏱️ 5 dk okuma</span>
+                  </div>
                   <h4 id="phoneStoryTitle" class="phone-story-title">Defne'nin Yıldızlar Yolculuğu</h4>
                   <p id="phoneStorySub" class="phone-story-sub">Kozmik gezegenlerde kaybolan ışık taşını bulabilecek mi?</p>
                   <button type="button" class="phone-play-btn">
@@ -165,28 +190,30 @@
     <!-- 3 ADIMLI HİKAYE YOLCULUĞU (NASIL ÇALIŞIR) -->
     <section class="steps-section scallop-bottom">
       <div class="container">
-        <span class="heading-icon">🚀</span>
-        <h2 class="section-heading">3 Kolay Adımda Sihirli Bir Masal</h2>
-        <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
-          Karmaşık ayarlarla uğraşmadan, dakikalar içinde çocuğunuzun gözlerini ışıldatacak bir hikaye oluşturun.
-        </p>
+        <div class="scroll-fade-in">
+          <span class="heading-icon">🚀</span>
+          <h2 class="section-heading">3 Kolay Adımda Sihirli Bir Masal</h2>
+          <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
+            Karmaşık ayarlarla uğraşmadan, dakikalar içinde çocuğunuzun gözlerini ışıldatacak bir hikaye oluşturun.
+          </p>
+        </div>
 
         <div class="steps-grid">
-          <div class="step-card step-1">
+          <div class="step-card step-1 scroll-fade-in">
             <div class="step-number-badge">1</div>
             <div class="step-icon-wrap">📸</div>
             <h3>Fotoğraf & İsim</h3>
             <p>Çocuğunuzun güler yüzlü bir fotoğrafını ve adını girin. Yapay zeka yüz hatlarını sevimli bir çizim karaktere dönüştürür.</p>
           </div>
 
-          <div class="step-card step-2">
+          <div class="step-card step-2 scroll-fade-in">
             <div class="step-number-badge">2</div>
             <div class="step-icon-wrap">🗺️</div>
             <h3>Maceranı Belirle</h3>
             <p>Uzay, dinozorlar, okyanus veya sihirli şatolar arasından seçim yapın; cesaret, paylaşmak ve sevgi gibi değerleri hikayeye ekleyin.</p>
           </div>
 
-          <div class="step-card step-3">
+          <div class="step-card step-3 scroll-fade-in">
             <div class="step-number-badge">3</div>
             <div class="step-icon-wrap">🎧</div>
             <h3>Birlikte Oku & Dinle</h3>
@@ -199,26 +226,28 @@
     <!-- ÖZELLİKLER (Mevcut Paper Card Grid) -->
     <section class="features-section bg-teal scallop-bottom container-full">
       <div class="container">
-        <span class="heading-icon">📖</span>
-        <h2 class="section-heading">Her çocuk kendi hikayesinin kahramanı</h2>
+        <div class="scroll-fade-in">
+          <span class="heading-icon">📖</span>
+          <h2 class="section-heading">Her çocuk kendi hikayesinin kahramanı</h2>
+        </div>
 
         <div class="features-grid">
-          <div class="paper-card">
+          <div class="paper-card scroll-fade-in">
             <h3>Kişiselleştirilmiş Hikayeler</h3>
             <p>Çocuğunuzun adı ve fotoğrafıyla, tamamen ona özel bir masal dünyası oluşturuyoruz.</p>
           </div>
 
-          <div class="paper-card">
+          <div class="paper-card scroll-fade-in">
             <h3>Ebeveyn Kontrolü</h3>
             <p>Tüm içerikler ebeveyn onayından geçiyor, çocuğunuz güvenle keşfediyor.</p>
           </div>
 
-          <div class="paper-card">
+          <div class="paper-card scroll-fade-in">
             <h3>Kolay Kullanım</h3>
             <p>Birkaç dokunuşla, dakikalar içinde yepyeni bir hikaye hazır oluyor.</p>
           </div>
 
-          <div class="paper-card">
+          <div class="paper-card scroll-fade-in">
             <h3>Farklı Temalar</h3>
             <p>Macera, uzay, deniz altı ve daha fazlası — her ruh haline uygun bir tema var.</p>
           </div>
@@ -238,7 +267,10 @@
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div>
-              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-header">
+                <div class="testimonial-stars">★★★★★</div>
+                <span class="testimonial-read-time-badge">⏱️ 5 dk uyku seansı</span>
+              </div>
               <p>"Kızım Defne kendi adını ve çizimini astronot kıyafetiyle görünce mutluluktan havalara uçtu. Artık her akşam yeni bir gezegene gidiyoruz!"</p>
             </div>
             <div class="testimonial-author">
@@ -252,7 +284,10 @@
 
           <div class="testimonial-card">
             <div>
-              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-header">
+                <div class="testimonial-stars">★★★★★</div>
+                <span class="testimonial-read-time-badge">⏱️ 6 dk akşam okuması</span>
+              </div>
               <p>"Kitap okumayı sevmeyen oğlum, başrolünde kendisinin olduğu hikayeleri sabırsızlıkla bekliyor. Sesli dinleme özelliği de harika çalışıyor."</p>
             </div>
             <div class="testimonial-author">
@@ -266,7 +301,10 @@
 
           <div class="testimonial-card">
             <div>
-              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-header">
+                <div class="testimonial-stars">★★★★★</div>
+                <span class="testimonial-read-time-badge">⏱️ 4 dk yatış rutini</span>
+              </div>
               <p>"Pedagog onaylı içerikler olması bizim için çok kritikti. Çocuğumuzu ekran bağımlılığından kurtarıp hayal gücünü geliştiren muazzam bir uygulama."</p>
             </div>
             <div class="testimonial-author">
