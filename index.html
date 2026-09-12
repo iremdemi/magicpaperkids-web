@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/buttons.css" />
   <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/interactive.css" />
 </head>
 <body class="has-hero">
 
@@ -40,42 +41,162 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO (TaleTwist 4K Büyülü Masal Sahnesi) -->
     <section class="hero-section bg-navy scallop-bottom">
       <div class="hero-scene" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
+      
       <div class="hero container">
-        <div class="hero-pills">
-          <span class="pill-badge pill-badge--outline">🚀 Uzay</span>
-          <span class="pill-badge pill-badge--outline">🌊 Deniz Altı</span>
-          <span class="pill-badge pill-badge--outline">🏰 Macera</span>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            WHERE FAIRYTALES<br />COME TO LIFE
+          </h1>
+          <div class="hero-cloud-bubble">
+            Interactive adventures, daily stories, and customizable choices for curious little minds.
+          </div>
         </div>
-        <h1 class="hero-title">Çocuklara özel kişiselleştirilmiş hikayeler</h1>
-        <p class="hero-text">
-          Magic Paper uygulaması, çocuklara özel kendi fotoğrafları ve adıyla
-          kendi hikayelerini oluşturmayı sağlayan bir iOS uygulamasıdır.
-        </p>
-        <a href="iletisim.html" class="btn btn-primary">Hemen Başla</a>
 
-        <div class="hero-showcase">
-          <div class="hero-floating-card hero-floating-card--left">
-            <strong>🎨 Kendi Karakterin</strong>
-            Çocuğunun fotoğrafından tek dokunuşla hikaye kahramanı yarat.
+        <!-- Masal kitabı üzerindeki buton -->
+        <div class="hero-book-cta-wrap">
+          <a href="#simulator" class="hero-book-cta">
+            START A STORY
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SİHİR SİMÜLATÖRÜ & CANLI ÖNİZLEME (Hero'nun hemen altında) -->
+    <section id="simulator" class="simulator-section">
+      <div class="container">
+        <div class="simulator-container-card">
+          <div class="simulator-intro">
+            <span class="pill-badge" style="margin-bottom: 12px;">✨ İnteraktif Deneyim</span>
+            <h2 class="section-heading" style="text-align: left; margin-bottom: 16px;">
+              Çocuğunuzun Masalını Canlı Önizleyin
+            </h2>
+            <p style="color: var(--color-text-body); font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
+              Aşağıya çocuğunuzun adını yazın ve bir macera teması seçin. Telefondaki masal kapağının ve hikaye başlığının anında nasıl kişiselleştiğini görün!
+            </p>
+
+            <div class="simulator-form">
+              <div class="simulator-input-wrap">
+                <span>✍️</span>
+                <input type="text" id="childNameInput" class="simulator-input" value="Defne" placeholder="Çocuğunun adını yaz..." maxlength="20" />
+              </div>
+              <a href="iletisim.html" class="btn btn-primary">Masalı Oluştur</a>
+            </div>
+
+            <div class="simulator-theme-chips" style="margin-top: 16px;">
+              <button type="button" class="theme-chip is-selected" data-theme="uzay">🚀 Uzay Kaşifi</button>
+              <button type="button" class="theme-chip" data-theme="deniz">🌊 Deniz Altı</button>
+              <button type="button" class="theme-chip" data-theme="dinozor">🦕 Dinozor Vadisi</button>
+              <button type="button" class="theme-chip" data-theme="masal">🏰 Sihirli Şato</button>
+            </div>
+
+            <!-- App Store ve Sosyal Kanıt Rozetleri -->
+            <div class="store-badges-wrap" style="justify-content: flex-start; margin-top: 28px;">
+              <a href="iletisim.html" class="app-store-btn" aria-label="App Store'dan İndir">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.65-.97 1.7-0.84 2.73.99.08 2.01-.47 2.53-1.22z"/></svg>
+                <div class="app-store-text">
+                  <span>App Store'dan</span>
+                  <span>İndirin</span>
+                </div>
+              </a>
+              <span class="pill-badge">⭐ 4.9/5 — 2.400+ Ebeveyn Puanı</span>
+            </div>
           </div>
 
-          <div class="phone-mockup">
-            <img src="images/app-screenshot.jpeg" alt="Magic Paper uygulaması ana sayfa ekranı" />
-          </div>
-
-          <div class="hero-floating-card hero-floating-card--right">
-            <strong>📚 100+ Masal Dünyası</strong>
-            Uzay, deniz altı, macera ve daha fazlası arasından seç.
+          <!-- Canlı etkileşimli telefon ekranı & Yüzen Kartlar -->
+          <div class="simulator-phone-wrap">
+            <div class="phone-mockup">
+              <div class="phone-screen-content">
+                <div id="phoneScreenBg" class="phone-screen-bg" style="background: radial-gradient(circle at 50% 30%, #3b0764 0%, #0f172a 100%);"></div>
+                <div class="phone-screen-overlay">
+                  <span id="phoneStoryBadge" class="phone-story-badge">🚀 Uzay & Galaksi</span>
+                  <h4 id="phoneStoryTitle" class="phone-story-title">Defne'nin Yıldızlar Yolculuğu</h4>
+                  <p id="phoneStorySub" class="phone-story-sub">Kozmik gezegenlerde kaybolan ışık taşını bulabilecek mi?</p>
+                  <button type="button" class="phone-play-btn">
+                    <span>▶</span> Masalı Dinle
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ÖZELLİKLER -->
+    <!-- GÜVEN VE SOSYAL KANIT ŞERİDİ -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">📖</div>
+            <div class="trust-info">
+              <strong>50.000+</strong>
+              <span>Oluşturulan Masal</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🛡️</div>
+            <div class="trust-info">
+              <strong>%100 Güvenli & Reklamsız</strong>
+              <span>Ebeveyn Denetimli Alan</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🎓</div>
+            <div class="trust-info">
+              <strong>Pedagog Onaylı</strong>
+              <span>Gelişimsel Kazanımlar</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🎧</div>
+            <div class="trust-info">
+              <strong>Sesli Masal Anlatımı</strong>
+              <span>Yatmadan Önce Dinle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 ADIMLI HİKAYE YOLCULUĞU (NASIL ÇALIŞIR) -->
+    <section class="steps-section scallop-bottom">
+      <div class="container">
+        <span class="heading-icon">🚀</span>
+        <h2 class="section-heading">3 Kolay Adımda Sihirli Bir Masal</h2>
+        <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
+          Karmaşık ayarlarla uğraşmadan, dakikalar içinde çocuğunuzun gözlerini ışıldatacak bir hikaye oluşturun.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card step-1">
+            <div class="step-number-badge">1</div>
+            <div class="step-icon-wrap">📸</div>
+            <h3>Fotoğraf & İsim</h3>
+            <p>Çocuğunuzun güler yüzlü bir fotoğrafını ve adını girin. Yapay zeka yüz hatlarını sevimli bir çizim karaktere dönüştürür.</p>
+          </div>
+
+          <div class="step-card step-2">
+            <div class="step-number-badge">2</div>
+            <div class="step-icon-wrap">🗺️</div>
+            <h3>Maceranı Belirle</h3>
+            <p>Uzay, dinozorlar, okyanus veya sihirli şatolar arasından seçim yapın; cesaret, paylaşmak ve sevgi gibi değerleri hikayeye ekleyin.</p>
+          </div>
+
+          <div class="step-card step-3">
+            <div class="step-number-badge">3</div>
+            <div class="step-icon-wrap">🎧</div>
+            <h3>Birlikte Oku & Dinle</h3>
+            <p>Her sayfasında çocuğunuzun yer aldığı renkli masalı sesli anlatımla dinleyin veya uyku öncesi keyifle birlikte okuyun.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÖZELLİKLER (Mevcut Paper Card Grid) -->
     <section class="features-section bg-teal scallop-bottom container-full">
       <div class="container">
         <span class="heading-icon">📖</span>
@@ -104,6 +225,116 @@
         </div>
       </div>
     </section>
+
+    <!-- EBEVEYN YORUMLARI (TESTIMONIALS) -->
+    <section class="testimonials-section scallop-bottom">
+      <div class="container">
+        <span class="heading-icon">❤️</span>
+        <h2 class="section-heading">Ebeveynler Ne Diyor?</h2>
+        <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
+          Binlerce ailenin uyku öncesi okuma alışkanlığını değiştiren gerçek deneyimler.
+        </p>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p>"Kızım Defne kendi adını ve çizimini astronot kıyafetiyle görünce mutluluktan havalara uçtu. Artık her akşam yeni bir gezegene gidiyoruz!"</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👩</div>
+              <div>
+                <div class="testimonial-author-name">Zeynep K.</div>
+                <div class="testimonial-child">4 yaşında kız annesi</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p>"Kitap okumayı sevmeyen oğlum, başrolünde kendisinin olduğu hikayeleri sabırsızlıkla bekliyor. Sesli dinleme özelliği de harika çalışıyor."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👨</div>
+              <div>
+                <div class="testimonial-author-name">Barış T.</div>
+                <div class="testimonial-child">6 yaşında erkek babası</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p>"Pedagog onaylı içerikler olması bizim için çok kritikti. Çocuğumuzu ekran bağımlılığından kurtarıp hayal gücünü geliştiren muazzam bir uygulama."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👩</div>
+              <div>
+                <div class="testimonial-author-name">Melis A.</div>
+                <div class="testimonial-child">5 yaşında ikiz annesi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIKÇA SORULAN SORULAR (FAQ) -->
+    <section class="faq-section">
+      <div class="container">
+        <span class="heading-icon">❓</span>
+        <h2 class="section-heading">Aklınıza Takılan Sorular</h2>
+
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-question">
+              <span>Çocuğumun fotoğrafları güvende mi?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Kesinlikle evet. Yüklediğiniz fotoğraflar yalnızca çizim karakteri oluşturmak için kullanılır; hiçbir 3. tarafla paylaşılmaz veya reklam amaçlı işlenmez. Çocuk gizliliği standartlarına (COPPA & GDPR) tam uyumluyuz.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Hangi yaş grubu için uygundur?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              MagicPaper özellikle 2 - 9 yaş arasındaki çocukların hayal gücü ve bilişsel gelişim ihtiyaçları gözetilerek uzman pedagoglar rehberliğinde tasarlanmıştır.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Hikayeleri internet olmadan dinleyebilir miyiz?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Evet! Oluşturduğunuz veya kütüphanenize eklediğiniz tüm masalları çevrimdışı (offline) moda alabilir, araba yolculuklarında veya uçakta internet olmadan rahatça okuyup dinleyebilirsiniz.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KAPANIŞ ÇAĞRISI (FINAL CTA BANNER) -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-card">
+          <h2>Çocuğunuzun İlk Masalını Şimdi Oluşturun</h2>
+          <p>Kendi fotoğrafları ve adıyla hayat bulan bu büyüleyici yolculuğa dakikalar içinde ücretsiz başlayın.</p>
+          <div class="store-badges-wrap">
+            <a href="iletisim.html" class="btn btn-primary" style="font-size: 18px; padding: 16px 36px;">
+              Hemen Ücretsiz Başla
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -125,5 +356,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/hero-demo.js"></script>
 </body>
 </html>

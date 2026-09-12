@@ -1,0 +1,8 @@
+{
+  "name": "MagicPaper",
+  "description": "MagicPaper, çocuklara özel kendi fotoğrafları ve adıyla kendi hikayelerini oluşturmayı sağlayan bir iOS uygulamasının web sitesi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,103 +1,149 @@
 /* ==========================================================================
    Ana Sayfa Hero (giriş) Bölümü
+   4K Masal Dünyası İllüstrasyonu (hero-bg.jpg)
+   Referans TaleTwist arayüzüne birebir uyumlu yerleşim
    ========================================================================== */
 
 .hero-section {
   position: relative;
-  /* Header artık hero'nun üzerine yüzüyor, bu yüzden üstten ekstra boşluk
-     bırakılıyor ki başlık floating nav'ın altında kalmasın. */
-  padding-block: calc(var(--space-2xl) + var(--space-lg)) calc(var(--space-2xl) + var(--scallop-size));
+  min-height: 88vh;
+  min-height: 88dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* Header floating olduğu için üst boşluk */
+  padding-top: calc(96px + var(--space-md));
+  padding-bottom: calc(var(--space-xl) + var(--scallop-size));
+  background-color: #0b1a26;
   overflow: hidden;
 }
 
-/* Hero'nun arkasındaki illüstrasyon: masal kitabından fırlayan
-   ejderha/şövalye/peri/baykuş sahnesi (images/hero-bg.jpg). */
+/* Hero'nun arkasındaki 4K illüstrasyon:
+   Sol tarafta mantar, sağda şato, altta açık masal kitabı ve karakterler */
 .hero-scene {
   position: absolute;
   inset: 0;
-  background: url("../images/hero-bg.jpg") center 30% / cover no-repeat;
+  background: url("../images/hero-bg.jpg") center bottom / cover no-repeat;
+  image-rendering: -webkit-optimize-contrast;
+  z-index: 0;
 }
 
-/* Sahnenin önüne çekilen çok hafif perde — sadece başlık okunabilirliği
-   için üstte ince bir karartma, görselin rengi/doygunluğu korunuyor. */
+/* Sahnenin önüne çekilen çok hafif perde — başlığın ve metinlerin
+   okunabilirliğini sağlarken görselin canlılığını ve 4K netliğini korur */
 .hero-veil {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(6, 16, 26, 0.45) 0%,
-    rgba(6, 16, 26, 0.1) 35%,
-    rgba(6, 16, 26, 0.05) 70%,
-    rgba(6, 16, 26, 0.35) 100%
+    rgba(6, 20, 30, 0.5) 0%,
+    rgba(6, 20, 30, 0.12) 32%,
+    rgba(6, 20, 30, 0.02) 65%,
+    rgba(6, 20, 30, 0.35) 100%
   );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
 }
 
-.hero-pills {
+.hero-content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(34px, 5.2vw, 56px);
-  line-height: 1.12;
+  font-size: clamp(34px, 5.2vw, 62px);
+  line-height: 1.1;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #fff;
+  letter-spacing: 1px;
+  color: #ffffff;
   max-width: 18ch;
-  margin-bottom: var(--space-lg);
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
-/* Karakterlerin üstünde beliren konuşma/düşünce balonu — alt metin
-   buraya yazılıyor, referans görseldeki gibi. */
-.hero-text {
+/* Karakterlerin üstündeki beyaz bulut düşünce balonu */
+.hero-cloud-bubble {
   position: relative;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vw, 17px);
   font-weight: 600;
-  max-width: 40ch;
-  color: var(--color-text-dark);
-  background: rgba(255, 255, 255, 0.95);
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.45);
-  margin-bottom: calc(var(--space-lg) + 14px);
+  max-width: 56ch;
+  color: #1e293b;
+  background: #ffffff;
+  padding: 14px 36px;
+  border-radius: 999px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.45;
 }
 
-.hero-text::before,
-.hero-text::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
+/* Kitap üzerindeki turuncu CTA butonu */
+.hero-book-cta-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: clamp(60px, 12vh, 140px);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.hero-text::before {
-  width: 22px;
-  height: 22px;
-  bottom: -26px;
-  transform: translateX(-40px);
+.hero-book-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ea733f;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(16px, 1.8vw, 20px);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 14px 48px;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px -4px rgba(234, 115, 63, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.hero-text::after {
-  width: 12px;
-  height: 12px;
-  bottom: -38px;
-  transform: translateX(-58px);
+.hero-book-cta:hover {
+  background: #dc6129;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 32px -4px rgba(234, 115, 63, 0.85);
+}
+
+@media (max-width: 640px) {
+  .hero-cloud-bubble {
+    border-radius: var(--radius-lg);
+    padding: 12px 20px;
+  }
+
+  .hero-book-cta {
+    padding: 12px 32px;
+  }
 }
 
 /* --- Telefon mockup + yanlarda yüzen bilgi kartları --- */
