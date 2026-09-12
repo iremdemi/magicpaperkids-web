@@ -10,60 +10,25 @@
   overflow: hidden;
 }
 
-/* Hero'nun arkasındaki renkli, katmanlı "gün batımı" sahnesi (fotoğraf
-   değil, tamamen CSS gradyanlarıyla çizilmiş: doygun gökyüzü geçişi +
-   yumuşak ışık lekeleri + yeşil tepe silueti). Bilingvo referansındaki
-   gibi zengin/canlı bir atmosfer hedefleniyor, ama kendi renk dilimizle. */
+/* Hero'nun arkasındaki illüstrasyon: masal kitabından fırlayan
+   ejderha/şövalye/peri/baykuş sahnesi (images/hero-bg.jpg). */
 .hero-scene {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 50% 45% at 18% 22%, rgba(255, 255, 255, 0.22), transparent 70%),
-    radial-gradient(ellipse 55% 50% at 85% 12%, color-mix(in srgb, var(--color-brand-red) 55%, transparent), transparent 70%),
-    radial-gradient(ellipse 60% 55% at 78% 68%, color-mix(in srgb, var(--color-brand-purple-start) 55%, transparent), transparent 70%),
-    linear-gradient(
-      165deg,
-      var(--color-bg-navy) 0%,
-      var(--color-brand-purple-start) 38%,
-      var(--color-brand-purple-end) 62%,
-      var(--color-brand-red) 84%,
-      var(--color-sun-glow) 100%
-    );
+  background: url("../images/hero-bg.jpg") center 30% / cover no-repeat;
 }
 
-.hero-scene::before {
-  content: "";
-  position: absolute;
-  inset: -15%;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.3), transparent 40%),
-    radial-gradient(circle at 68% 55%, rgba(255, 255, 255, 0.16), transparent 45%);
-  filter: blur(50px);
-}
-
-.hero-scene::after {
-  content: "";
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  bottom: -160px;
-  height: 300px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, var(--color-hill), var(--color-hill-dark));
-  box-shadow: 0 -48px 0 -18px color-mix(in srgb, var(--color-hill) 60%, white);
-}
-
-/* Sahnenin önüne çekilen yumuşak perde — sadece başlık/metin bloğunun
-   arkasında lokal bir vinyet oluşturuyor, sahnenin geri kalanındaki
-   renkler tam doygunlukta kalıyor. */
+/* Sahnenin önüne çekilen çok hafif perde — sadece başlık okunabilirliği
+   için üstte ince bir karartma, görselin rengi/doygunluğu korunuyor. */
 .hero-veil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 640px 460px at 50% 36%,
-    rgba(10, 8, 26, 0.55) 0%,
-    rgba(10, 8, 26, 0.25) 45%,
-    transparent 72%
+  background: linear-gradient(
+    180deg,
+    rgba(6, 16, 26, 0.45) 0%,
+    rgba(6, 16, 26, 0.1) 35%,
+    rgba(6, 16, 26, 0.05) 70%,
+    rgba(6, 16, 26, 0.35) 100%
   );
 }
 
@@ -87,20 +52,52 @@
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(40px, 6vw, 68px);
-  line-height: 1.08;
+  font-size: clamp(34px, 5.2vw, 56px);
+  line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: #fff;
-  max-width: 16ch;
-  margin-bottom: var(--space-md);
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  max-width: 18ch;
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
+/* Karakterlerin üstünde beliren konuşma/düşünce balonu — alt metin
+   buraya yazılıyor, referans görseldeki gibi. */
 .hero-text {
-  font-size: 18px;
-  max-width: 55ch;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: var(--space-lg);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 40ch;
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.45);
+  margin-bottom: calc(var(--space-lg) + 14px);
+}
+
+.hero-text::before,
+.hero-text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+}
+
+.hero-text::before {
+  width: 22px;
+  height: 22px;
+  bottom: -26px;
+  transform: translateX(-40px);
+}
+
+.hero-text::after {
+  width: 12px;
+  height: 12px;
+  bottom: -38px;
+  transform: translateX(-58px);
 }
 
 /* --- Telefon mockup + yanlarda yüzen bilgi kartları --- */
