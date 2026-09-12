@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Dekoratif Şekiller — kıvrımlı (scallop) bölüm kenarları,
+   yumuşak "blob" arkaplanlar ve yırtık kağıt kart görünümü.
+   Referans aldığımız tasarım dilinin (kıvrımlı geçişler, soft renkler,
+   kağıt dokulu kartlar) tekrar kullanılabilir parçaları burada.
+   ========================================================================== */
+
+/* --- Kıvrımlı (scallop) bölüm alt kenarı ---
+   Kullanımı: rengi olan bir section'a hem kendi arkaplan rengini hem de
+   .scallop-bottom sınıfını ver, data-scallop ile rengi eşleştir. */
+.scallop-bottom {
+  position: relative;
+}
+
+.scallop-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: calc(var(--scallop-size) / 2);
+  background-color: var(--scallop-color, #fff);
+  -webkit-mask-image: radial-gradient(
+    circle at calc(var(--scallop-size) / 2) 0,
+    transparent calc(var(--scallop-size) / 2 - 2px),
+    #000 calc(var(--scallop-size) / 2 - 1px)
+  );
+  mask-image: radial-gradient(
+    circle at calc(var(--scallop-size) / 2) 0,
+    transparent calc(var(--scallop-size) / 2 - 2px),
+    #000 calc(var(--scallop-size) / 2 - 1px)
+  );
+  -webkit-mask-size: var(--scallop-size) var(--scallop-size);
+  mask-size: var(--scallop-size) var(--scallop-size);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+/* Zemin renk yardımcıları — hem section'ın kendisine hem de
+   scallop'un rengini eşlemek için kullanılan CSS değişkenine uygulanır */
+.bg-cream {
+  background-color: var(--color-bg-cream);
+  --scallop-color: var(--color-bg-cream);
+}
+
+.bg-teal {
+  background-color: var(--color-bg-teal);
+  --scallop-color: var(--color-bg-teal);
+}
+
+.bg-pink {
+  background-color: var(--color-bg-pink);
+  --scallop-color: var(--color-bg-pink);
+}
+
+.bg-coral {
+  background-color: var(--color-bg-coral);
+  color: #fff;
+  --scallop-color: var(--color-bg-coral);
+}
+
+.bg-white {
+  background-color: var(--color-bg);
+  --scallop-color: var(--color-bg);
+}
+
+/* --- Yumuşak blob arkaplan (hero arkasındaki organik leke) --- */
+.blob-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.blob-bg::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(168, 85, 247, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.16), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(232, 51, 42, 0.10), transparent 45%);
+  border-radius: 50% 45% 55% 40% / 45% 55% 40% 50%;
+}
+
+/* --- Yırtık kağıt / not kartı görünümü ---
+   Kenarlar düzenli değil, el ile yırtılmış kağıt hissi versin diye
+   clip-path ile düzensiz (deckle-edge) bir kontur çiziliyor. Gölge de
+   bu konturu takip etsin diye box-shadow yerine drop-shadow filtresi
+   kullanılıyor. */
+.paper-card {
+  background: var(--color-card-paper);
+  padding: var(--space-md) var(--space-lg);
+  filter: drop-shadow(0 10px 20px rgba(31, 36, 48, 0.18));
+  position: relative;
+  clip-path: polygon(
+    0% 4%, 9% 1%, 18% 3%, 27% 0%, 36% 3%, 45% 1%, 54% 4%, 63% 0%, 72% 2%, 81% 4%, 90% 1%, 100% 3%,
+    100% 97%,
+    91% 99%, 82% 96%, 73% 100%, 64% 97%, 55% 99%, 46% 96%, 37% 100%, 28% 97%, 19% 99%, 10% 96%, 0% 98%
+  );
+}
+
+.paper-card:nth-child(odd) {
+  transform: rotate(-1.4deg);
+}
+
+.paper-card:nth-child(even) {
+  transform: rotate(1.4deg);
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 0.015) 0px,
+    rgba(0, 0, 0, 0.015) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  pointer-events: none;
+}
+
+/* --- Başlık üstü küçük dekoratif ikon rozeti --- */
+.heading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-sm);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 22px;
+  box-shadow: 0 6px 16px -8px rgba(31, 36, 48, 0.35);
+}
+
+/* --- Sevimli, top yuvarlak (pill) rozet --- */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 6px 16px -8px rgba(31, 36, 48, 0.35);
+}

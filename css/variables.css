@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Tasarım Değişkenleri (Renkler, Fontlar, Boşluklar)
+   Marka rengini, fontu değiştirmek istediğinde SADECE bu dosyaya bak.
+   ========================================================================== */
+
+:root {
+  /* Marka renkleri */
+  --color-brand-red: #e8332a;
+  --color-brand-purple-start: #a855f7;
+  --color-brand-purple-end: #ec4899;
+
+  /* Yumuşak / pastel zemin renkleri (bölüm bölüm kullanılır) */
+  --color-bg-cream: #fbeed8;
+  --color-bg-teal: #d2ecea;
+  --color-bg-pink: #fbdfe9;
+  --color-bg-coral: #e2794d;
+  --color-bg-coral-dark: #c85f37;
+
+  --color-text-dark: #1f2430;
+  --color-text-body: #4b4b4b;
+  --color-text-muted: #7a7a7a;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f7f7f9;
+  --color-border: #ececec;
+  --color-card-paper: #fff8ec;
+
+  /* Yazı Tipleri */
+  --font-heading: "Baloo 2", "Comic Sans MS", system-ui, sans-serif;
+  --font-body: "Nunito", "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Boşluklar (spacing scale) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  /* Genel */
+  --container-max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Kıvrımlı (scallop) kenar boyutu */
+  --scallop-size: 48px;
+}

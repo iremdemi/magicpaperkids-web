@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Üst şerit + Header/Nav bar
+   ========================================================================== */
+
+.top-strip {
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-brand-purple-start), var(--color-brand-purple-end));
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-sm);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-brand-red);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  display: block;
+  font-size: 22px;
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--space-xs);
+  background: var(--color-bg-soft);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+}
+
+.main-nav a {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.main-nav a:hover {
+  background: #fff;
+}
+
+.main-nav a.is-active {
+  background: var(--color-brand-purple-end);
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
