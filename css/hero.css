@@ -4,7 +4,9 @@
 
 .hero-section {
   position: relative;
-  padding-block: var(--space-2xl) calc(var(--space-2xl) + var(--scallop-size));
+  /* Header artık hero'nun üzerine yüzüyor, bu yüzden üstten ekstra boşluk
+     bırakılıyor ki başlık floating nav'ın altında kalmasın. */
+  padding-block: calc(var(--space-2xl) + var(--space-lg)) calc(var(--space-2xl) + var(--scallop-size));
   overflow: hidden;
 }
 
@@ -51,41 +53,27 @@
 .hero {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.05fr 460px;
-  gap: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-xs);
   margin-bottom: var(--space-md);
-}
-
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-illustration {
-  width: 100%;
-  max-width: 460px;
-  height: auto;
-}
-
-.hero-illustration .hero-illustration-shadowed {
-  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.28));
 }
 
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.05;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.08;
   color: #fff;
+  max-width: 16ch;
   margin-bottom: var(--space-md);
 }
 
@@ -93,26 +81,85 @@
   font-size: 18px;
   max-width: 55ch;
   color: rgba(255, 255, 255, 0.82);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* --- Telefon mockup + yanlarda yüzen bilgi kartları --- */
+.hero-showcase {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--space-lg);
+}
+
+.phone-mockup {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  aspect-ratio: 9 / 19.5;
+  background: #0c0c0c;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+}
+
+.phone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: #0c0c0c;
+  border-radius: 0 0 14px 14px;
+  z-index: 1;
+}
+
+.phone-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  display: block;
+  position: relative;
+}
+
+.hero-floating-card {
+  position: absolute;
+  top: 45%;
+  max-width: 210px;
+  background: #fff;
+  color: var(--color-text-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: 0 20px 34px -18px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  font-size: 14px;
+}
+
+.hero-floating-card strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--color-brand-purple-end);
+}
+
+.hero-floating-card--left {
+  left: 4%;
+  transform: translateY(-65%) rotate(-3deg);
+}
+
+.hero-floating-card--right {
+  right: 4%;
+  transform: translateY(-40%) rotate(3deg);
 }
 
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-pills {
-    justify-content: center;
-  }
-
-  .hero-visual {
-    max-width: 320px;
-    margin-inline: auto;
-  }
-
-  .hero-text {
-    margin-inline: auto;
+  .hero-floating-card {
+    display: none;
   }
 }
 

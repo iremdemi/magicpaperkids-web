@@ -30,3 +30,8 @@
   color: var(--color-text-dark);
   border: 2px solid var(--color-border);
 }
+
+.btn-sm {
+  padding: 8px 20px;
+  font-size: 14px;
+}

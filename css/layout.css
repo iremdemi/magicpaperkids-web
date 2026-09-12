@@ -6,6 +6,15 @@ body {
   font-family: var(--font-body);
   color: var(--color-text-body);
   background: var(--color-bg);
+  /* Header artık sabit/yüzen (floating) olduğu için içerik onun altında
+     kalmasın diye üstten boşluk bırakılıyor. Hero'su olan sayfalarda
+     (bkz. body.has-hero) bu boşluğa gerek yok, hero header'ın arkasına
+     kadar uzanmalı. */
+  padding-top: 96px;
+}
+
+body.has-hero {
+  padding-top: 0;
 }
 
 .container {
