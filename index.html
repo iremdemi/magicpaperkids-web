@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/buttons.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/interactive.css" />
+  <link rel="preload" as="image" href="images/hero-bg.png" />
 </head>
 <body class="has-hero">
 
@@ -63,18 +64,36 @@
       <div class="hero container">
         <div class="hero-content">
           <h1 class="hero-title">
-            <span class="hero-sparkle hero-sparkle-left" aria-hidden="true">
-              <span class="sparkle-lg">✦</span>
-              <span class="sparkle-sm">✦</span>
-            </span>
-            Her masalın kahramanı,<br />çocuğunuz olsun.
-            <span class="hero-sparkle hero-sparkle-right" aria-hidden="true">
-              <span class="sparkle-lg">✦</span>
-            </span>
+            <span class="sr-only">Her masalın kahramanı, çocuğunuz olsun.</span>
+            <svg class="hero-arch-title" viewBox="0 0 880 220" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+              <defs>
+                <path id="arch-line-1" d="M 40,119 A 1200,1200 0 0,1 840,119" fill="none" />
+                <path id="arch-line-2" d="M 90,186 A 1120,1120 0 0,1 790,186" fill="none" />
+              </defs>
+
+              <!-- Kırmızı ✦ Sihir Yıldızları -->
+              <g class="hero-arch-sparkles">
+                <text x="52" y="62" class="hero-arch-sparkle sparkle-lg">✦</text>
+                <text x="74" y="98" class="hero-arch-sparkle sparkle-sm">✦</text>
+                <text x="825" y="68" class="hero-arch-sparkle sparkle-md">✦</text>
+                <text x="745" y="150" class="hero-arch-sparkle sparkle-md">✦</text>
+              </g>
+
+              <!-- Yay Şeklinde Kavisli Başlık Metinleri -->
+              <text class="arch-text">
+                <textPath href="#arch-line-1" xlink:href="#arch-line-1" startOffset="50%" text-anchor="middle">
+                  Her masalın kahramanı,
+                </textPath>
+              </text>
+              <text class="arch-text">
+                <textPath href="#arch-line-2" xlink:href="#arch-line-2" startOffset="50%" text-anchor="middle">
+                  çocuğunuz olsun.
+                </textPath>
+              </text>
+            </svg>
           </h1>
           <p class="hero-subtitle">
-            MagicPaper ile çocuğunuzun adı ve fotoğrafıyla ona özel masallar yaratın.<br class="sub-br" />
-            Hayal ettiği dünyalarda başlayan her hikâye, ona ait bambaşka bir maceraya dönüşsün.
+            MagicPaper ile çocuğunuzun adı ve fotoğrafıyla ona özel masallar yaratın. Hayal ettiği dünyalarda başlayan her hikâye, ona ait bambaşka bir maceraya dönüşsün.
           </p>
 
           <!-- Referans görseldeki App Store'dan İndir Butonu ve Işıltı Çizgileri -->
@@ -101,7 +120,7 @@
       <!-- Hero Alt Çubuğu: Aşağı Kaydır İndikatörü ve Hikaye Rozeti -->
       <div class="hero-bottom-bar">
         <div class="hero-bottom-spacer" aria-hidden="true"></div>
-        <a href="#simulator" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
+        <a href="#steps" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
           <span class="scroll-stem"></span>
           <span class="scroll-label">Aşağı kaydır</span>
           <span class="scroll-arrow">↓</span>
@@ -114,7 +133,102 @@
       </div>
     </section>
 
-    <!-- SİHİR SİMÜLATÖRÜ & CANLI ÖNİZLEME (Hero'nun hemen altında) -->
+    <!-- GÜVEN VE SOSYAL KANIT ŞERİDİ -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-info">
+              <strong>50.000+</strong>
+              <span>Oluşturulan Masal</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-info">
+              <strong>%100 Güvenli & Reklamsız</strong>
+              <span>Ebeveyn Denetimli Alan</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-info">
+              <strong>Pedagog Onaylı</strong>
+              <span>Gelişimsel Kazanımlar</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-info">
+              <strong>Sesli Masal Anlatımı</strong>
+              <span>Yatmadan Önce Dinle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 ADIMLI HİKAYE YOLCULUĞU (NASIL ÇALIŞIR) -->
+    <section id="steps" class="steps-section scallop-bottom bg-cream">
+      <div class="container">
+        <div class="scroll-fade-in">
+          <h2 class="section-heading">3 Kolay Adımda Sihirli Bir Masal</h2>
+          <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
+            Karmaşık ayarlarla uğraşmadan, dakikalar içinde çocuğunuzun gözlerini ışıldatacak bir hikaye oluşturun.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card step-1 scroll-fade-in">
+            <div class="step-number-badge">1</div>
+            <h3>Fotoğraf & İsim</h3>
+            <p>Çocuğunuzun güler yüzlü bir fotoğrafını ve adını girin. Yapay zeka yüz hatlarını sevimli bir çizim karaktere dönüştürür.</p>
+          </div>
+
+          <div class="step-card step-2 scroll-fade-in">
+            <div class="step-number-badge">2</div>
+            <h3>Maceranı Belirle</h3>
+            <p>Uzay, dinozorlar, okyanus veya sihirli şatolar arasından seçim yapın; cesaret, paylaşmak ve sevgi gibi değerleri hikayeye ekleyin.</p>
+          </div>
+
+          <div class="step-card step-3 scroll-fade-in">
+            <div class="step-number-badge">3</div>
+            <h3>Birlikte Oku & Dinle</h3>
+            <p>Her sayfasında çocuğunuzun yer aldığı renkli masalı sesli anlatımla dinleyin veya uyku öncesi keyifle birlikte okuyun.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÖZELLİKLER (Mevcut Paper Card Grid) -->
+    <section class="features-section bg-teal scallop-bottom container-full">
+      <div class="container">
+        <div class="scroll-fade-in">
+          <h2 class="section-heading">Her çocuk kendi hikayesinin kahramanı</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="paper-card scroll-fade-in">
+            <h3>Kişiselleştirilmiş Hikayeler</h3>
+            <p>Çocuğunuzun adı ve fotoğrafıyla, tamamen ona özel bir masal dünyası oluşturuyoruz.</p>
+          </div>
+
+          <div class="paper-card scroll-fade-in">
+            <h3>Ebeveyn Kontrolü</h3>
+            <p>Tüm içerikler ebeveyn onayından geçiyor, çocuğunuz güvenle keşfediyor.</p>
+          </div>
+
+          <div class="paper-card scroll-fade-in">
+            <h3>Kolay Kullanım</h3>
+            <p>Birkaç dokunuşla, dakikalar içinde yepyeni bir hikaye hazır oluyor.</p>
+          </div>
+
+          <div class="paper-card scroll-fade-in">
+            <h3>Farklı Temalar</h3>
+            <p>Macera, uzay, deniz altı ve daha fazlası — her ruh haline uygun bir tema var.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SİHİR SİMÜLATÖRÜ & CANLI ÖNİZLEME -->
     <section id="simulator" class="simulator-section">
       <div class="container">
         <div class="simulator-container-card">
@@ -188,103 +302,23 @@
                     Masalı Dinle
                   </button>
                 </div>
+
+                <!-- Basit 'Oluşturuluyor' Yükleme Animasyonu (İsim veya tema değiştiğinde tetiklenir) -->
+                <div id="phoneGeneratingLoader" class="phone-generating-loader" aria-hidden="true">
+                  <div class="generating-icon-wrap">
+                    <div class="generating-ring"></div>
+                    <span class="generating-sparkle">✦</span>
+                  </div>
+                  <div class="generating-text">
+                    Masal Oluşturuluyor
+                    <span class="generating-dots">
+                      <span></span><span></span><span></span>
+                    </span>
+                  </div>
+                  <span class="generating-sub">Karakteriniz hazırlanıyor...</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GÜVEN VE SOSYAL KANIT ŞERİDİ -->
-    <section class="trust-strip">
-      <div class="container">
-        <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-info">
-              <strong>50.000+</strong>
-              <span>Oluşturulan Masal</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-info">
-              <strong>%100 Güvenli & Reklamsız</strong>
-              <span>Ebeveyn Denetimli Alan</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-info">
-              <strong>Pedagog Onaylı</strong>
-              <span>Gelişimsel Kazanımlar</span>
-            </div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-info">
-              <strong>Sesli Masal Anlatımı</strong>
-              <span>Yatmadan Önce Dinle</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 ADIMLI HİKAYE YOLCULUĞU (NASIL ÇALIŞIR) -->
-    <section class="steps-section scallop-bottom">
-      <div class="container">
-        <div class="scroll-fade-in">
-          <h2 class="section-heading">3 Kolay Adımda Sihirli Bir Masal</h2>
-          <p style="text-align: center; max-width: 55ch; margin: -20px auto 40px; color: var(--color-text-body); font-size: 16px;">
-            Karmaşık ayarlarla uğraşmadan, dakikalar içinde çocuğunuzun gözlerini ışıldatacak bir hikaye oluşturun.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card step-1 scroll-fade-in">
-            <div class="step-number-badge">1</div>
-            <h3>Fotoğraf & İsim</h3>
-            <p>Çocuğunuzun güler yüzlü bir fotoğrafını ve adını girin. Yapay zeka yüz hatlarını sevimli bir çizim karaktere dönüştürür.</p>
-          </div>
-
-          <div class="step-card step-2 scroll-fade-in">
-            <div class="step-number-badge">2</div>
-            <h3>Maceranı Belirle</h3>
-            <p>Uzay, dinozorlar, okyanus veya sihirli şatolar arasından seçim yapın; cesaret, paylaşmak ve sevgi gibi değerleri hikayeye ekleyin.</p>
-          </div>
-
-          <div class="step-card step-3 scroll-fade-in">
-            <div class="step-number-badge">3</div>
-            <h3>Birlikte Oku & Dinle</h3>
-            <p>Her sayfasında çocuğunuzun yer aldığı renkli masalı sesli anlatımla dinleyin veya uyku öncesi keyifle birlikte okuyun.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ÖZELLİKLER (Mevcut Paper Card Grid) -->
-    <section class="features-section bg-teal scallop-bottom container-full">
-      <div class="container">
-        <div class="scroll-fade-in">
-          <h2 class="section-heading">Her çocuk kendi hikayesinin kahramanı</h2>
-        </div>
-
-        <div class="features-grid">
-          <div class="paper-card scroll-fade-in">
-            <h3>Kişiselleştirilmiş Hikayeler</h3>
-            <p>Çocuğunuzun adı ve fotoğrafıyla, tamamen ona özel bir masal dünyası oluşturuyoruz.</p>
-          </div>
-
-          <div class="paper-card scroll-fade-in">
-            <h3>Ebeveyn Kontrolü</h3>
-            <p>Tüm içerikler ebeveyn onayından geçiyor, çocuğunuz güvenle keşfediyor.</p>
-          </div>
-
-          <div class="paper-card scroll-fade-in">
-            <h3>Kolay Kullanım</h3>
-            <p>Birkaç dokunuşla, dakikalar içinde yepyeni bir hikaye hazır oluyor.</p>
-          </div>
-
-          <div class="paper-card scroll-fade-in">
-            <h3>Farklı Temalar</h3>
-            <p>Macera, uzay, deniz altı ve daha fazlası — her ruh haline uygun bir tema var.</p>
           </div>
         </div>
       </div>

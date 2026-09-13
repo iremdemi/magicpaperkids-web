@@ -1,6 +1,6 @@
 /* ==========================================================================
    Ana Sayfa Hero (giriş) Bölümü
-   4K Büyülü Masal Ormanı İllüstrasyonu (hero-bg.jpg)
+   4K Büyülü Masal Ormanı İllüstrasyonu (hero-bg.png)
    Sinematik, Ferah ve Sevimli Çocuk Dünyası
    ========================================================================== */
 
@@ -23,7 +23,7 @@
 .hero-scene {
   position: absolute;
   inset: 0;
-  background: url("../images/hero-bg.jpg?v=2") center bottom / cover no-repeat;
+  background: url("../images/hero-bg.png?v=1") center bottom / cover no-repeat;
   image-rendering: -webkit-optimize-contrast;
   z-index: 0;
 }
@@ -59,69 +59,68 @@
   padding-inline: 20px;
 }
 
-/* Büyük Başlık: Baloo 2, 800 kalınlıkta, dostane, gölgesiz zeminli, ferah */
+/* Büyük Başlık: Baloo 2, 800 kalınlıkta, yay (kavisli) şeklinde, ferah */
 .hero-title {
   position: relative;
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(34px, 4.7vw, 58px);
-  line-height: 1.15;
-  color: #ffffff;
-  max-width: 24ch;
+  display: block;
+  width: 100%;
+  max-width: 860px;
   margin-inline: auto;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.35);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Yay Şeklinde (Kavisli) Başlık SVG'si */
+.hero-arch-title {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+  filter: drop-shadow(0 4px 22px rgba(0, 0, 0, 0.45)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.hero-arch-title .arch-text {
+  font-family: var(--font-heading), 'Baloo 2', cursive, sans-serif;
+  font-weight: 800;
+  font-size: 53px;
+  fill: #ffffff;
   letter-spacing: -0.4px;
 }
 
 /* Başlığın yanındaki tatlı mercan renkli sihir yıldızları ✦ */
-.hero-sparkle {
-  position: absolute;
-  color: #e8332a;
+.hero-arch-title .hero-arch-sparkle {
+  fill: #e8332a;
+  font-family: var(--font-heading), 'Baloo 2', sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
   user-select: none;
   pointer-events: none;
-  filter: drop-shadow(0 2px 8px rgba(232, 51, 42, 0.5));
+  filter: drop-shadow(0 0 8px rgba(232, 51, 42, 0.7));
+  animation: pulseSparkle 2.5s infinite ease-in-out;
 }
 
-.hero-sparkle-left {
-  left: -38px;
-  top: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+.hero-arch-title .hero-arch-sparkle.sparkle-lg {
+  font-size: 32px;
 }
 
-.hero-sparkle-left .sparkle-lg {
-  font-size: 26px;
-  line-height: 1;
+.hero-arch-title .hero-arch-sparkle.sparkle-md {
+  font-size: 25px;
 }
 
-.hero-sparkle-left .sparkle-sm {
-  font-size: 15px;
-  line-height: 1;
-  margin-left: 10px;
+.hero-arch-title .hero-arch-sparkle.sparkle-sm {
+  font-size: 17px;
   opacity: 0.85;
 }
 
-.hero-sparkle-right {
-  right: -32px;
-  bottom: 8px;
-}
-
-.hero-sparkle-right .sparkle-lg {
-  font-size: 24px;
-  line-height: 1;
-}
-
-/* Alt Metin: Beyaz, gölgesiz zeminli, ferah, okunabilir ve karakterleri kapatmayan yerleşim */
+/* Alt Metin: Beyaz, gölgesiz zeminli, bütün halinde ferah akıcı yerleşim */
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.35vw, 17.5px);
+  font-size: clamp(15px, 1.25vw, 17px);
   font-weight: 600;
-  line-height: 1.58;
-  max-width: 52ch;
+  line-height: 1.55;
+  max-width: 660px;
   color: #ffffff;
   background: transparent;
   padding: 0;
@@ -131,17 +130,6 @@
   display: block;
   text-align: center;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
-}
-
-@media (min-width: 640px) {
-  .sub-br {
-    display: inline;
-  }
-}
-@media (max-width: 639px) {
-  .sub-br {
-    display: none;
-  }
 }
 
 /* Referans görseldeki App Store'dan İndir Grubu ve Işıltı Çizgileri */
@@ -318,31 +306,20 @@
   }
 
   .hero-title {
-    font-size: clamp(26px, 7.5vw, 36px);
-    line-height: 1.2;
-    margin-bottom: 12px;
-    max-width: 18ch;
+    margin-bottom: 8px;
+    max-width: 100%;
   }
 
-  .hero-sparkle-left {
-    left: -18px;
-    top: 4px;
+  .hero-arch-title {
+    max-width: 100%;
   }
-  .hero-sparkle-left .sparkle-lg { font-size: 18px; }
-  .hero-sparkle-left .sparkle-sm { display: none; }
-
-  .hero-sparkle-right {
-    right: -16px;
-    bottom: 6px;
-  }
-  .hero-sparkle-right .sparkle-lg { font-size: 18px; }
 
   .hero-subtitle {
-    font-size: 13.5px;
+    font-size: 14px;
     line-height: 1.5;
-    max-width: 38ch;
+    max-width: 92%;
     margin-bottom: 18px;
-    padding-inline: 10px;
+    padding-inline: 8px;
   }
 
   .hero-appstore-btn {

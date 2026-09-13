@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneSub = document.getElementById('phoneStorySub');
   const phoneBadge = document.getElementById('phoneStoryBadge');
   const phoneBg = document.getElementById('phoneScreenBg');
+  const phoneLoader = document.getElementById('phoneGeneratingLoader');
+  const phoneScreen = document.querySelector('.phone-screen-content');
 
   const themeData = {
     uzay: {
@@ -46,22 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   let currentTheme = 'uzay';
+  let generateTimer = null;
+  let inputDebounce = null;
 
-  function updateLiveStory() {
+  function renderPhoneContent() {
     const rawName = childNameInput ? childNameInput.value.trim() : '';
     const childName = rawName || 'Defne';
     const themeInfo = themeData[currentTheme] || themeData.uzay;
 
     if (phoneTitle) {
-      phoneTitle.style.opacity = '0';
-      phoneTitle.style.transform = 'translateY(6px)';
-      
-      setTimeout(() => {
-        phoneTitle.textContent = `${childName}${themeInfo.suffix}`;
-        phoneTitle.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-        phoneTitle.style.opacity = '1';
-        phoneTitle.style.transform = 'translateY(0)';
-      }, 120);
+      phoneTitle.textContent = `${childName}${themeInfo.suffix}`;
     }
 
     if (phoneSub) {
@@ -82,21 +78,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (childNameInput) {
-    childNameInput.addEventListener('input', updateLiveStory);
+  function triggerGenerating(duration = 460) {
+    if (!phoneLoader) {
+      renderPhoneContent();
+      return;
+    }
+
+    // Yükleme animasyonunu başlat
+    phoneLoader.classList.add('is-active');
+    if (phoneScreen) {
+      phoneScreen.classList.add('is-generating');
+    }
+
+    if (generateTimer) {
+      clearTimeout(generateTimer);
+    }
+
+    generateTimer = setTimeout(() => {
+      renderPhoneContent();
+      phoneLoader.classList.remove('is-active');
+      if (phoneScreen) {
+        phoneScreen.classList.remove('is-generating');
+      }
+      generateTimer = null;
+    }, duration);
   }
 
+  // İsim kutusu değiştiğinde tetikleme
+  if (childNameInput) {
+    childNameInput.addEventListener('input', () => {
+      if (phoneLoader) {
+        phoneLoader.classList.add('is-active');
+      }
+      if (phoneScreen) {
+        phoneScreen.classList.add('is-generating');
+      }
+
+      if (inputDebounce) {
+        clearTimeout(inputDebounce);
+      }
+
+      inputDebounce = setTimeout(() => {
+        renderPhoneContent();
+        if (phoneLoader) {
+          phoneLoader.classList.remove('is-active');
+        }
+        if (phoneScreen) {
+          phoneScreen.classList.remove('is-generating');
+        }
+        inputDebounce = null;
+      }, 420);
+    });
+  }
+
+  // Tema seçildiğinde tetikleme
   themeChips.forEach(chip => {
     chip.addEventListener('click', () => {
       themeChips.forEach(c => c.classList.remove('is-selected'));
       chip.classList.add('is-selected');
       currentTheme = chip.getAttribute('data-theme') || 'uzay';
-      updateLiveStory();
+      triggerGenerating(480);
     });
   });
 
-  // İlk açılışta tetikle
-  updateLiveStory();
+  // İlk açılışta doğrudan içeriği doldur (yükleme göstermeden)
+  renderPhoneContent();
 
   // 2. FAQ AÇILIR/KAPANIR AKORDİYON
   const faqItems = document.querySelectorAll('.faq-item');
